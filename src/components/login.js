@@ -29,7 +29,7 @@ const Login = () => {
   return (
     <div className='login_main'>
 
-      <img src={leaf} className='login_leaf' alt='leaf' />
+      {/* <img src={leaf} className='login_leaf' alt='leaf' /> */}
       <div className='login_container'>
 
       
