@@ -5,6 +5,9 @@ const Register = () => {
 const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [email,setEmail]=useState('');
+  const [dob,setDob]=useState('')
+  
 
   const handleRegister = () => {
     // Basic validation (you can add more validation logic)
@@ -23,7 +26,7 @@ const navigate = useNavigate();
     }
 
     // Add the new user to the array
-    const newUser = { username, password };
+    const newUser = { username, password ,email,dob};
     const updatedUsers = [...existingUsers, newUser];
 
     // Store the updated users array in local storage
@@ -42,6 +45,26 @@ const navigate = useNavigate();
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          required
+        />
+      </label>
+      <br />
+      <label >
+        Email:
+        <input 
+          type="email" 
+          value={email}
+          onChange={(e)=>setEmail(e.target.value)}
+          required
+            />
+      </label>
+      <br />
+      <label >
+        DOB:
+        <input type="date"
+        value={dob}
+        onChange={(e)=> setDob(e.target.value)}
+        required
         />
       </label>
       <br />
@@ -51,6 +74,7 @@ const navigate = useNavigate();
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          required
         />
       </label>
       <br />
