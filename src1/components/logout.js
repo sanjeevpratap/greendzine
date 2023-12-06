@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import logout from '../img/logout.png'
 
 const Logout = () => {
   const navigate = useNavigate();
@@ -16,7 +15,7 @@ const Logout = () => {
   return (
     <div>
       
-      <button className='logout1' onClick={handleLogout}>logout</button>
+      <button onClick={handleLogout}>Logout</button>
     </div>
   );
 };

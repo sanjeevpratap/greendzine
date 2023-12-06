@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Footer from './footer';
-import Logout from './logout';
-import '../css/userList.css'
-import userlist_pic from '../img/moptro logo.png'
 const UserList = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [employeeList, setEmployeeList] = useState([]);
@@ -56,63 +53,47 @@ const UserList = () => {
       dob: '1998-07-12'
     }
   ];
-  let filteredEmployees = [...randomdata, ...employeeList]
-  filteredEmployees = filteredEmployees.filter((employee) => {
+  let filteredEmployees=[...randomdata,...employeeList]
+   filteredEmployees = filteredEmployees.filter((employee) =>
+  {
 
-    console.log(employee.username)
-    return employee.username && employee.username.toLowerCase().includes(searchTerm.toLowerCase())
+  console.log(employee.username)
+  return employee.username && employee.username.toLowerCase().includes(searchTerm.toLowerCase())
   });
 
 
 
-  const changeInput = (e) => {
+  const changeInput= (e)=>{
     setSearchTerm(e.target.value);
     console.log(searchTerm)
   }
 
   return (
-    // <div className='user5_img'>
-
-    // </div>
-
-
-    
-
-    <div className='main_block'>
-    <div style={{ display: 'block' }}>
-
-    <Logout />
-    </div>
-      {<img src={userlist_pic} className='userlist_pic' alt='leaf' />}
-
-      {/* <h2>User List</h2> */}
+    <div>
+      <h2>User List</h2>
       {/* Search bar */}
       <input
-        type="text" className='input3'
+        type="text"
         placeholder="Search by employee name"
         value={searchTerm}
         onChange={changeInput}
       />
-
-      {filteredEmployees.map((employee, index) => (
-        <div className='user_input' key={index}>
-          <p className='para'>Emp Id : {index}</p>
-          <p className='para'>Username: {employee.username}</p>
-          <p className='para'>Email: {employee.email}</p>
-          <p className='para'>DOB: {employee.dob}</p>
+      
+      {filteredEmployees.map((employee,index) => (
+        <div key={index}>
+          <p>Emp Id : {index}</p>
+          <p>Username: {employee.username}</p>
+          <p>Email: {employee.email}</p>
+          <p>DOB: {employee.dob}</p>
+          
         </div>
-
-
-
       ))}
+  
+     
 
-
-
-
-
-      <div>
-        <Footer />
-      </div>
+<div>
+  <Footer/>
+</div>
     </div>
   );
 };

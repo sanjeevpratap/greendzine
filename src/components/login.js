@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate ,Link} from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import '../css/auth.css'
-import leaf from '../img/leaf.jfif'
+import leaf from '../img/Group 3.png'
 
 const Login = () => {
   const navigate = useNavigate();
@@ -9,53 +9,58 @@ const Login = () => {
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    
+
     const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
     const user = existingUsers.find(
       (u) => u.username === username && u.password === password
     );
 
     if (user) {
-    localStorage.setItem('authenticated', 'true');
+      localStorage.setItem('authenticated', 'true');
       navigate('/');
     } else {
       alert('Invalid username or password');
     }
   };
-  const handleRegister=()=>{
+  const handleRegister = () => {
     navigate('/register');
   }
 
   return (
     <div className='login_main'>
+      <div className='main2'>
 
-      {/* <img src={leaf} className='login_leaf' alt='leaf' /> */}
-      <div className='login_container'>
+        <div className='image1'>
 
-      
-      <label>
-        Username:
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </label>
-      <br />
-      <label>
-        Password:
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </label>
-      <br />
-      <button onClick={handleLogin}>Login</button>
+          {<img src={leaf} className='login_leaf' alt='leaf' />}
+        </div>
+        <div className='login_container'>
 
-      {/* <Link to="/register">Sign Up</Link> */}
-     <button onClick={handleRegister}>Sign Up</button>
-     </div>
+
+          <label className='label'>
+            Username:<br></br>
+            <input className='input'
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </label><br></br>
+          <br />
+          <label className='label'>
+            Password:<br></br>
+            <input className='input'
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </label><br></br>
+          <br />
+          <button className='button' onClick={handleLogin}>Login</button><br></br>
+
+          {/* <Link to="/register">Sign Up</Link> */}
+          <button className='signup' onClick={handleRegister}>Sign Up</button>
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,0 +1,59 @@
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* top: 0px;
+    left: 0px; */
+    width: 360px;
+    height: 800px;
+    /* UI Properties */
+    background: transparent linear-gradient(180deg, #000000 0%, #000E09 100%) 0% 0% no-repeat padding-box;
+    mix-blend-mode: normal;
+    border-radius: 28px;
+    opacity: 1;
+    /* margin-top: -160px; */
+    color: white;
+    margin-top: -50px;
+}
+
+.label{
+    .label{
+        color: #a19b9b66;
+        font: normal normal bold 16px/21px Mulish;
+        /* box-shadow: inset 0px 3px 3px #FFFDFD40, 3px 3px 3px #4A494947; */
+        /* margin-left: 20px; */
+    }
+}
+
+
+.input1{
+    box-shadow: inset 0px 3px 3px #FFFDFD40, 3px 3px 3px #4A494947;
+    background: #4d3f3f66 0% 0% no-repeat padding-box;
+    mix-blend-mode: normal;
+    opacity: 1;
+    width: 200px;
+    height: 30px;
+    border-radius: 15px;
+    color: gray;
+}
+
+
+.title1{
+    text-align: center;
+}
+
+.register{
+    background: transparent linear-gradient(180deg, #00FF2580 0%, #000000 100%, #36A54680 100%) 0% 0% no-repeat padding-box;
+    mix-blend-mode: normal;
+    border: 2px solid #8CFF0026;
+    opacity: 1;
+    border-radius: 10px;
+    color: white;
+    margin-top: 15px;
+    margin-left: 70px;
+
+}
+
+.image21{
+    margin-left: 60px;
+}
